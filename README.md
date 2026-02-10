@@ -58,5 +58,3 @@ hotel-booking-form/
 4. Fill in the booking form and submit  
 5. Select a payment method to view the booking confirmation  
 
-> No backend or ser 📂 Project Structure
-
