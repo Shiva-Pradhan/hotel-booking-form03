@@ -1,0 +1,367 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #1f2933;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #38bdf8;
+}
+
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 80px;
+    color: white;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 28px;
+    color: #e5e7eb;
+}
+
+.hero button {
+    padding: 14px 34px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero button:hover {
+    background: #0ea5e9;
+}
+
+
+.rooms {
+    padding: 70px 60px;
+    background: white;
+}
+
+.rooms h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.room-card {
+    position: relative;
+    background: #f8fafc;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+}
+
+.room-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.room-card:hover img {
+    transform: scale(1.05);
+}
+
+.room-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.25)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.room-card:hover::after {
+    opacity: 1;
+}
+
+.room-info {
+    padding: 20px;
+}
+
+.room-info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #16a34a;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.amenities {
+    font-size: 14px;
+    color: #475569;
+}
+
+.amenities-section {
+    padding: 60px;
+    background: #f1f5f9;
+}
+
+.amenities-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.amenity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.amenity {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.booking {
+    padding: 70px 60px;
+    background: white;
+}
+
+.booking h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.booking form {
+    max-width: 900px;
+    margin: auto;
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+}
+
+input[type="file"] {
+    background: white;
+    cursor: pointer;
+}
+
+#pricePreview {
+    font-weight: bold;
+    color: #16a34a;
+    margin-top: 10px;
+}
+
+.booking button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.payment {
+    padding: 60px;
+    background: #f1f5f9;
+    text-align: center;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.payment-options label {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.payment button {
+    padding: 14px 40px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+footer {
+    background: #020617;
+    color: #cbd5e1;
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    .hero {
+        padding: 0 25px;
+        height: 100vh;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .rooms,
+    .booking,
+    .amenities-section,
+    .payment {
+        padding: 40px 25px;
+    }
+}
