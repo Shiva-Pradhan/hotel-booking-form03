@@ -1,4 +1,4 @@
-# Hotel Booking Form 🏨
+# Hotel Booking Website 🏨
 🏨 LuxuryStay – Modern Hotel Booking Website
 
 LuxuryStay is a clean and responsive hotel booking website designed to provide users with a smooth and user-friendly booking experience. The project allows users to explore room options, view amenities, select stay dates, calculate booking costs dynamically, upload a government ID, and complete a booking through an interactive interface.
